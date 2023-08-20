@@ -14,24 +14,25 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Long id;
+    private Long Id;
     @Getter @Setter
-    private String nombre;
+    private String Nombre;
     @Getter @Setter
-    private String correo;
+    private String Correo;
     @Getter @Setter
-    private String contraseña;
+    private String Contraseña;
     @Getter @Setter
-    private String direccion;
+    private String Pais;
     @Getter @Setter
-    private String nroTelefono;
+    private String NroTelefono;
 
-    public Usuario(Long id, String nombre, String correo, String contraseña, String direccion, String nroTelefono) {
-        this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.direccion = direccion;
-        this.nroTelefono = nroTelefono;
+    public Usuario(){}
+    public Usuario(Long id, String nombre, String correo, String contraseña, String pais, String nroTelefono) {
+        this.Id = id;
+        this.Nombre = nombre;
+        this.Correo = correo;
+        this.Contraseña = contraseña;
+        this.Pais = pais;
+        this.NroTelefono = nroTelefono;
     }
 }

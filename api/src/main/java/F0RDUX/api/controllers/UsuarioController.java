@@ -1,13 +1,13 @@
 package F0RDUX.api.controllers;
 
 import F0RDUX.api.models.Usuario;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import F0RDUX.api.repositories.UsuarioRepository;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/api", method = { RequestMethod.GET, RequestMethod.POST })
 public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
@@ -16,9 +16,22 @@ public class UsuarioController {
         this.usuarioRepository=usuarioRepository;
     }
 
-    @GetMapping("api/usuarios")
+    @GetMapping("/usuarios")
     public List<Usuario> getAll()
     {
         return usuarioRepository.findAll();
+    }
+
+    @PostMapping("/usuarios/create")
+    public Usuario create(Usuario usuario)
+    {
+        usuarioRepository.save(usuario);
+        return usuario;
+    }
+
+    @DeleteMapping("/usuarios/delete/{id}")
+    public void delete(@PathVariable Long id)
+    {
+        usuarioRepository.deleteById(id);
     }
 }
