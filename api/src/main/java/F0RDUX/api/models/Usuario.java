@@ -1,9 +1,6 @@
 package F0RDUX.api.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +14,7 @@ public class Usuario {
     private Long Id;
     @Getter @Setter
     private String Nombre;
-    @Getter @Setter
+    @Getter @Setter @Column(unique = true)
     private String Correo;
     @Getter @Setter
     private String Contraseña;
