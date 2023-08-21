@@ -1,6 +1,7 @@
 package F0RDUX.api;
 
 
+import F0RDUX.api.repositories.ProductoRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +14,7 @@ public class ApiApplication {
 
 		ApplicationContext context=SpringApplication.run(ApiApplication.class, args);
 		UsuarioRepository usuariorepository=context.getBean(UsuarioRepository.class);
+		ProductoRepository productoRepository=context.getBean(ProductoRepository.class);
 	}
 
 }
