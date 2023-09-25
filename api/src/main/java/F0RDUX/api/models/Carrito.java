@@ -20,12 +20,12 @@ public class Carrito {
     Long IdUsuario;
     @Getter
     @Setter
-    List<Producto> Productos;
+    List<Long> Productos;
     @Getter
     @Setter
     Double Total;
     public Carrito(){}
-    public Carrito(Long id, Long idUsuario, List<Producto> productos, Double total) {
+    public Carrito(Long id, Long idUsuario, List<Long> productos, Double total) {
         Id = id;
         IdUsuario = idUsuario;
         Productos = productos;

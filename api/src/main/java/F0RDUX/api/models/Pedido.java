@@ -15,7 +15,7 @@ public class Pedido {
     Long Id;
     @Getter
     @Setter
-    List<Producto> ListaProductos;
+    List<Long> ListaProductos;
     @Getter
     @Setter
     Long IdUsuario;
