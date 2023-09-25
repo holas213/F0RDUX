@@ -41,8 +41,8 @@ public class UsuarioController {
     @PostMapping("/usuarios/create")
     public Usuario create(Usuario usuario)
     {
-        Argon2 argon2= Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2i);
-        String contraseñaCriptada=argon2.hash(5,1024,1,usuario.getContraseña());
+        Argon2 argon2= Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+        String contraseñaCriptada= argon2.hash(5,1024,1, usuario.getContraseña().toCharArray());
         usuario.setContraseña(contraseñaCriptada);
         usuarioRepository.save(usuario);
         return usuario;
